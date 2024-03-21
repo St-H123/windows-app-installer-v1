@@ -1,0 +1,112 @@
+echo installing all apps
+
+echo when this is done, install the following chrome extentions:
+echo 1. Dark Reader : Forces Dark Mode for all websites. 
+echo 2. Open Dyslextic : Forces OpenDyslextic as the font for all websites
+echo 3. uBlock Origin : Removes ads
+echo 4. WebGPT : Allows for more GPT functionalities
+echo 5. Colorzilla : allows for getting the HexCode of things on a website.
+echo 6. DarkPDF : makes PDF's in darkmode.
+
+echo installing apps using chocolatey...
+
+echo using chocolatey to install power tools...
+choco install -y gsudo 
+choco install -y powertoys 
+choco install -y hwinfo 
+choco install -y winfetch 
+
+echo using chocolatey to install virualisation support...
+choco install -y docker-cli 
+choco install -y docker-desktop
+choco install -y docker-kitematic
+choco install -y docker-compose
+choco install -y virtualbox 
+choco install -y sandboxie-plus 
+choco install -y dolphin 
+
+echo adding on the virualisation support by installing, updating Windows SubSystem for Linux (WSL)
+choco install -y wsl2
+wsl --update
+wsl --install --distribution Ubuntu
+REM choco install -y wsl-ubuntu-1604 REM outdate because it keeps crashing above does seem to function
+
+echo using chocolatey to install code editors...
+choco install -y arduino  
+choco install -y notepadplusplus 
+choco install -y unity-hub
+choco install -y nano
+choco install -y vim
+REM choco install -y neovim
+choco install -y vscode
+
+echo using chocolatey to install vscode extentions...
+choco install -y vscode-powershell 
+choco install -y vscode-cpptools 
+choco install -y vscode-gitignore 
+choco install -y vscode-vsliveshare 
+choco install -y vscode-python 
+choco install -y vscode-java 
+choco install -y vscode-arduino 
+choco install -y chocolatey-vscode 
+
+echo using chocolatey to install programming languages...
+choco install -y nodejs 
+choco install -y rust 
+choco install -y python 
+choco install -y javaruntime 
+choco install -y maven
+
+echo using chocolatey to install other developer tools...
+choco install -y git 
+choco install -y openssh 
+REM choco install -y nerd-fonts-firamono
+choco install -y microsoft-windows-terminal 
+choco install -y wsl-ubuntu-2204 
+choco install -y wget 
+choco install -y curl 
+choco install -y grep
+choco install -y treesizefree 
+choco install -y tailscale
+
+echo using chocolatey to install game or app stores...
+choco install -y steam 
+choco install -y epicgameslauncher 
+
+echo using chocolatey to install other apps that are open source...
+choco install -y firefox
+choco install -y chromium
+choco install -y blender 
+choco install -y telegram
+choco install -y yt-dlp 
+choco install -y gimp 
+choco install -y photogimp
+choco install -y peazip 
+choco install -y translucenttb 
+choco install -y mailspring
+choco install -y handbrake
+choco install -y audacity
+choco install -y freecad
+choco install -y inkscape
+choco install -y joplin
+choco install -y darktable
+choco install -y libreoffice-fresh
+choco install -y onlyoffice
+
+echo using chocolatey to install other apps...
+choco install -y discord 
+choco install -y paint.net 
+choco install -y whatsapp 
+choco install -y cider
+choco install -y notion
+
+echo using chocolatey to install other fonts...
+choco install -y nerd-fonts-opendyslexic
+
+echo completed using chocolatey to install apps
+
+echo "installing" finder by adding a shortcut to the start menu called "finder.lnk"
+mklink "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\finder.lnk" "C:\Windows\SysWOW64\explorer.exe"
+REM set the finder icon of "C:\Users\tygo2\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\File Explorer.lnk"
+echo completed installing all apps
+set "breakFlag=true"
